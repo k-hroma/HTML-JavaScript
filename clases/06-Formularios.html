@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo Formulario con JavaScript</title>
+</head>
+<body>
+    <form id='formulario'>
+        Nombre: <input type="text" name='nombre' value='Juan'/>
+        <br/>
+        Apellido: <input type='text' name='apellido' value='Perez'/>
+        <br/>
+    </form>
+    <button onclick='mostrarValores()'>Mostrar</button>
+    <div id='valores'></div>
+    <script>
+        function mostrarValores(){
+            // definimos una variable--> accede al formulario a traves del id del elemento a recuperar
+            let formulario = document.forms['formulario'];
+            // definimos una variable de texto a concatenar
+            let texto = '';
+            //recorremos el formulario
+            for(let elemento of formulario){
+                texto += elemento.value + '<br/>';
+            }
+            // recuperamos el div con id=valores y mostramos los valores de la variable texto en el elmento div
+            document.getElementById('valores').innerHTML = texto;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo DOM con JavaScript</title>
+</head>
+<body>
+    <h1 id='cabecero'>Ejemplo DOM con JavaScript</h1>
+    <p id='parrafo'>Saludos!</p>
+
+    <!--Acceder a los objetos del DOM para leer los valores y modificarlos-->
+    <script>
+        let cabecero = document.getElementById('cabecero');
+        console.log(cabecero + "vemos que es un objeto");
+        console.log(cabecero.innerHTML);
+        let parrafo = document.getElementById('parrafo');
+        console.log(parrafo + "vemos que es un objeto");
+        console.log('valor parrafo:' + parrafo.innerHTML);
+        console.log('saludos desde JavaScript');
+        parrafo.innerHTML = "nuevo valor"
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo Formulario con JavaScript</title>
+</head>
+<body>
+    <form id='formulario'>
+        Nombre: <input type="text" name='nombre' value='Juan'/>
+        <br/>
+        Apellido: <input type='text' name='apellido' value='Perez'/>
+        <br/>
+    </form>
+    <button onclick='mostrarValores()'>Mostrar</button>
+    <div id='valores'></div>
+    <script>
+        function mostrarValores(){
+            //variable formulario apunta al form de id "formulario"
+            //como tiene mas de un elemento es un array
+            let formulario = document.forms['formulario'];
+            let texto = '';
+            //recuerar los elementos individualmente utilzando un id
+            let nombre = formulario['nombre'];
+            let apellido = formulario['apellido'];
+            //recuperamos los valores de los elementos
+            texto = nombre.value + '<br/>' + apellido.value;
+            //mostramos los valores en el html
+            document.getElementById('valores').innerHTML = texto;
+        }
+    </script>
+
+</body>
+</html>
