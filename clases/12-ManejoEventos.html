@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manejo de Eventos</title>
+</head>
+<body>
+  <h1 onclick="this.innerHTML='No es buena práctica'">Mala práctica</h1>
+  <h2 onclick="cambiarTexto(this)">Hacé click aquí</h2>
+  <h3 id="titulo">Mejor práctica</h3>
+  <h4 id="mostrar"></h4>
+  
+  <script>
+    function cambiarTexto(parametro) {
+      console.log(parametro)
+      console.log(parametro.innerHTML)
+      parametro.innerHTML = "Un poco mejor"
+      console.log(parametro.innerHTML)
+    }
+    
+    //nueva funcion
+    function cambiarTextoh() 
+    {
+      document.getElementById("titulo").innerHTML = "Nuevo titulo"
+
+    }
+
+    function mostrarTexto() 
+    {
+      document.getElementById("mostrar").innerHTML = "Nuevo titulo"
+    
+    }
+    
+    //recuperar el elemento h3 y cambiar txt
+    document.getElementById("titulo").onmouseover = cambiarTextoh //va sin parentesis porque es la referencia
+
+    //recuperar el elemento h3 y mostrar en h4
+    document.getElementById("titulo").onclick = mostrarTexto //va sin parentesis porque es la referencia
+    
+    </script>
+</body>
+</html>

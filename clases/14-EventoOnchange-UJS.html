@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Manejo DOM con JavaScript</title>
+</head>
+<body>
+    <h1 id='titulo'>Manejo DOM con JavaScript</h1>
+    <br/>
+    Nombre: <input type="text" id="nombre" onchange="convertir()"/>
+    Apellido: <input type="text" onchange="convertir2(this)">
+    Edad: <input type="text" onchange="convertir3(this)">
+    <script>
+        function convertir(){
+            let nombre = document.getElementById('nombre');
+            nombre.value = nombre.value.toUpperCase()
+        }
+    //version dos
+        function convertir2(nombreInput){
+            nombreInput.value = nombreInput.value.toUpperCase();
+        }
+    //version fx flecha
+    const convertir3 = (edad) => 
+        edad.value = edad.value.toUpperCase()
+    
+
+            
+        
+    </script>
+</body>
+</html>

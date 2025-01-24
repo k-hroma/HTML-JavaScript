@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Manejo DOM con JavaScript</title>
+</head>
+<body>
+    <h1 id='titulo'>Manejo DOM con JavaScript</h1>
+    <br/>
+    Nombre: <input type="text" id='nombre'/>
+    <br/><br/>
+    Apellido: <input type="text" id='apellido'/>
+    <script>
+        function cambiar(evento){
+            //recibimos el evento que se ejecuta es opcional
+            //en este caso conviene ya que a partir del evento podemos recuperar cual es el elemento que lanzó el evento (document.getElementById('apellido'))
+            let componente = evento.target; 
+            //evento.target -> nos regresa el elemento de tipo input text>
+            //propiedad target -> hace referencia al objeto que lanzó el evento (es como si tuviermanos: cambiar(this))
+            componente.style.background = 'yellow';
+        }
+
+        // function regresar(evento){
+        //     let componente = evento.target;
+        //     evento.target.style.background = 'blue';
+        // }
+
+        // prueba funcion flecha
+        regresar = (evento) => {
+        let componente = evento.target;
+        evento.target.style.background = 'blue';
+      } 
+        //de esta manera ejecutamos los eventos desde JS y no desde el DOM
+        //la funcion no lleva parentesis porque es la referencia
+        document.getElementById('nombre').addEventListener('focus', cambiar);
+        document.getElementById('nombre').addEventListener('blur', regresar);
+
+        document.getElementById('apellido').addEventListener('focus', cambiar);
+        document.getElementById('apellido').addEventListener('blur', regresar);
+
+    </script>
+</body>
+</html>
